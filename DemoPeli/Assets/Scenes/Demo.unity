@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 717792829}
   - component: {fileID: 717792828}
   - component: {fileID: 717792830}
+  - component: {fileID: 717792831}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Soul
@@ -553,7 +554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caff6b32fc707ac4197c36d570487c61, type: 3}
   m_Color: {r: 0.32807618, g: 0.23638305, b: 0.6037736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -571,7 +572,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717792827}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1699023, y: 0.10641086, z: -0.34744382}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -595,6 +596,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &717792831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717792827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a45462e38e648b419969515a36c2275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rSpeed: 0.3
 --- !u!1 &837090466
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +620,7 @@ GameObject:
   - component: {fileID: 837090467}
   - component: {fileID: 837090468}
   - component: {fileID: 837090469}
+  - component: {fileID: 837090470}
   m_Layer: 0
   m_Name: Soul (2)
   m_TagString: Soul
@@ -669,7 +684,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caff6b32fc707ac4197c36d570487c61, type: 3}
   m_Color: {r: 0.32807618, g: 0.23638305, b: 0.6037736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -696,6 +711,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &837090470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837090466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a45462e38e648b419969515a36c2275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rSpeed: 0.3
 --- !u!1 &964133651
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +944,7 @@ GameObject:
   - component: {fileID: 1634452915}
   - component: {fileID: 1634452916}
   - component: {fileID: 1634452917}
+  - component: {fileID: 1634452918}
   m_Layer: 0
   m_Name: Soul (3)
   m_TagString: Soul
@@ -979,7 +1008,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caff6b32fc707ac4197c36d570487c61, type: 3}
   m_Color: {r: 0.32807618, g: 0.23638305, b: 0.6037736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1006,6 +1035,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1634452918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634452914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a45462e38e648b419969515a36c2275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rSpeed: 0.3
 --- !u!1 &1833133677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1059,7 @@ GameObject:
   - component: {fileID: 1833133678}
   - component: {fileID: 1833133679}
   - component: {fileID: 1833133680}
+  - component: {fileID: 1833133681}
   m_Layer: 0
   m_Name: Soul (1)
   m_TagString: Soul
@@ -1080,7 +1123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caff6b32fc707ac4197c36d570487c61, type: 3}
   m_Color: {r: 0.32807618, g: 0.23638305, b: 0.6037736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1107,6 +1150,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1833133681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833133677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a45462e38e648b419969515a36c2275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rSpeed: 0.3
 --- !u!1 &2133344232
 GameObject:
   m_ObjectHideFlags: 0
