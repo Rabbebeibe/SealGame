@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 962104177783236311}
   - component: {fileID: 962104177783236307}
   - component: {fileID: 962104177783236304}
+  - component: {fileID: 2133344237}
+  - component: {fileID: 2133344238}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -175,3 +177,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2133344237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962104177783236310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccb58b3aa90c7d458adb6dde54277ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  souls: 0
+  numberOfSouls: {fileID: 0}
+--- !u!114 &2133344238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962104177783236310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64819f46a48740945896b8b8146c614b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  components:
+  - {fileID: 962104177783236307}
+  - {fileID: 962104177783236304}

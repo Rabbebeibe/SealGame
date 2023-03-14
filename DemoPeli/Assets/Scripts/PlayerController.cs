@@ -24,9 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxis("Horizontal");
         animator.SetFloat("horizontal", Mathf.Abs(Input.GetAxis("Horizontal")));
-        //animator.SetFloat("vertical", Mathf.Abs(Input.GetAxis("Vertical")));
-
-
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
