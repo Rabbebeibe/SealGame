@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public float speed;
+    public float damage;
     Rigidbody2D enemyRb;
 
     // Start is called before the first frame update
@@ -39,5 +40,13 @@ public class EnemyMovement : MonoBehaviour
             transform.localScale = new Vector2(-(Mathf.Sign(enemyRb.velocity.x)), transform.localScale.y);
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }
