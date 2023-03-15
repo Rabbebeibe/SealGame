@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] public GameObject gameOverScreen;
 
 
     private void Awake()

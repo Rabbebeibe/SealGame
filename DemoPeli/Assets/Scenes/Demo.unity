@@ -1560,14 +1560,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6894837915963355172, guid: 22d38e520e1a8ad4fb7b140a219ebf04, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6894837915963355174, guid: 22d38e520e1a8ad4fb7b140a219ebf04, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 1074509001}
+    - target: {fileID: 6894837915963355174, guid: 22d38e520e1a8ad4fb7b140a219ebf04, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 581938097}
     - target: {fileID: 6894837915963355178, guid: 22d38e520e1a8ad4fb7b140a219ebf04, type: 3}
       propertyPath: m_Name
       value: Enemy

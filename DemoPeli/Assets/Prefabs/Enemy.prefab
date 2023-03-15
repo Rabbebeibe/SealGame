@@ -100,8 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175d6ca218f106a4cac68b629733cd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
   damage: 1
+  uiManager: {fileID: 0}
+  components:
+  - {fileID: 6894837915963355169}
+  playerHealth: {fileID: 0}
 --- !u!50 &6894837915963355172
 Rigidbody2D:
   serializedVersion: 4

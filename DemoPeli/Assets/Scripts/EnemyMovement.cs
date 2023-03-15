@@ -9,10 +9,21 @@ public class EnemyMovement : MonoBehaviour
     public float damage;
     Rigidbody2D enemyRb;
 
+    public UIManager uiManager;
+    [SerializeField] private Behaviour[] components;
+    public Health playerHealth;
+
+    private void Awake()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
+        speed = 5;
+
+       
     }
 
     // Update is called once per frame
@@ -26,6 +37,22 @@ public class EnemyMovement : MonoBehaviour
         {
             enemyRb.velocity = new Vector2(-speed, 0f);
         }
+
+        if (uiManager.gameOverScreen.activeSelf == true)
+        {
+            stopMovement();
+
+            if (IsFacingRight())
+            {
+                enemyRb.velocity = new Vector2(speed, 0f);
+            }
+            else
+            {
+                enemyRb.velocity = new Vector2(-speed, 0f);
+            }
+
+        }
+        
     }
 
     private bool IsFacingRight()
@@ -48,5 +75,18 @@ public class EnemyMovement : MonoBehaviour
         {
             collision.GetComponent<Health>().TakeDamage(damage);
         }
+    }
+
+    public void stopMovement()
+    {
+        if (uiManager.gameOverScreen.activeSelf == true)
+        {
+            foreach (Behaviour component in components)
+            {
+                component.enabled = false;
+            }
+            speed = 0;
+        }
+        
     }
 }

@@ -26,17 +26,7 @@ public class Health : MonoBehaviour
 
         else
         {
-            if (!dead)
-            {
-                foreach(Behaviour component in components)
-                {
-                    component.enabled = false;
-                }
-
-                dead = true;
-
-                uiManager.GameOver();
-            }
+            GameOverScreen();
         }
     }
 
@@ -62,6 +52,21 @@ public class Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(1);
+        }
+    }
+
+    public void GameOverScreen()
+    {
+        if (!dead)
+        {
+            foreach (Behaviour component in components)
+            {
+                component.enabled = false;
+            }
+
+            dead = true;
+
+            uiManager.GameOver();
         }
     }
 }
