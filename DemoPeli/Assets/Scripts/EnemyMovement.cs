@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
             enemyRb.velocity = new Vector2(-speed, 0f);
         }
 
-        if (uiManager.gameOverScreen.activeSelf == true)
+        if (uiManager.gameOverScreen.activeSelf == true || uiManager.youWinScreen.activeSelf == true)
         {
             stopMovement();
 
@@ -79,7 +79,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void stopMovement()
     {
-        if (uiManager.gameOverScreen.activeSelf == true)
+        if (uiManager.gameOverScreen.activeSelf == true || uiManager.youWinScreen.activeSelf == true)
         {
             foreach (Behaviour component in components)
             {

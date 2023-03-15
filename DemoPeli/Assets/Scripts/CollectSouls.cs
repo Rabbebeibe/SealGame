@@ -8,11 +8,18 @@ public class CollectSouls : MonoBehaviour
 {
     public float souls;
     public TextMeshProUGUI numberOfSouls;
+    private UIManager uiManager;
+    [SerializeField] private Behaviour[] components;
 
     // Start is called before the first frame update
     void Start()
     {
         souls = 0;
+        uiManager = FindObjectOfType<UIManager>();
+    }
+
+    private void Update()
+    {
 
     }
 
@@ -24,6 +31,16 @@ public class CollectSouls : MonoBehaviour
             Destroy(other.gameObject);
 
             numberOfSouls.text = souls.ToString();
+
+            if(souls == 18)
+            {
+                foreach (Behaviour component in components)
+                {
+                    component.enabled = false;
+                }
+
+                uiManager.YouWin();
+            }
         }
     }
 }

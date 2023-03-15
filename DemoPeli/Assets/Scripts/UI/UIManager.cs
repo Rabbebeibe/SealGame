@@ -5,11 +5,18 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] public GameObject gameOverScreen;
+    [SerializeField] public GameObject youWinScreen;
 
 
     private void Awake()
     {
         gameOverScreen.SetActive(false);
+        youWinScreen.SetActive(false);
+    }
+
+    public void YouWin()
+    {
+        youWinScreen.SetActive(true);
     }
 
     public void GameOver()
