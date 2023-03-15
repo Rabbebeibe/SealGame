@@ -5,7 +5,8 @@ using UnityEngine;
 public class RotateSouls : MonoBehaviour
 {
 
-    [SerializeField] private float rSpeed;
+    public float rSpeed;
+
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Behaviour[] components;
 

@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float hInput;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float jumpForce = 10;
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private Animator animator;
-    [SerializeField] private Vector2 direction;
-    [SerializeField] private bool facingRight;
+    public float speed = 10.0f;
+    public float hInput;
+    private Rigidbody2D rb;
+    public float jumpForce = 10;
+    public bool isGrounded;
+    public Transform feetPos;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
+
+
+    public Animator animator;
+    public Vector2 direction;
+    public bool facingRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,12 +32,33 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxis("Horizontal");
         animator.SetFloat("horizontal", Mathf.Abs(Input.GetAxis("Horizontal")));
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
             animator.SetBool("IsJumping", true);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+
+            else
+            {
+                isJumping = false;             
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
         }
         
     }
@@ -53,7 +82,6 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
             animator.SetBool("IsJumping", false);
         }
     }

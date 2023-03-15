@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    [SerializeField] private float speed;
-    [SerializeField] private float damage;
+    public float speed;
+    public float damage;
     
     Rigidbody2D enemyRb;
 
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        speed = 5;     
+        speed = 6;     
     }
 
     // Update is called once per frame
