@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     private UIManager uiManager;
 
     [SerializeField] private Behaviour[] components;
+    
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -19,15 +20,11 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
 
-        if (currentHealth > 0)
-        {
-            
-        }
-
-        else
+        if (currentHealth == 0)
         {
             GameOverScreen();
         }
+
     }
 
     public void AddHealth(float value)

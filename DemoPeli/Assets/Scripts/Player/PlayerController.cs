@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float hInput;
-    public Rigidbody2D rb;
-    public float jumpForce = 10;
-    public bool isGrounded;
-    public Animator animator;
-    public Vector2 direction;
-    public bool facingRight;
+    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float hInput;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float jumpForce = 10;
+    [SerializeField] private bool isGrounded;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Vector2 direction;
+    [SerializeField] private bool facingRight;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             animator.SetBool("IsJumping", true);
         }
-
         
     }
 

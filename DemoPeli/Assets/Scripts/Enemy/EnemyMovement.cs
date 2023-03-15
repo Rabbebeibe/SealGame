@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    public float speed;
-    public float damage;
+    [SerializeField] private float speed;
+    [SerializeField] private float damage;
+    
     Rigidbody2D enemyRb;
 
-    public UIManager uiManager;
+    [SerializeField] private UIManager uiManager;
     [SerializeField] private Behaviour[] components;
-    public Health playerHealth;
+    [SerializeField] private Health playerHealth;
 
     private void Awake()
     {
@@ -21,9 +22,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        speed = 5;
-
-       
+        speed = 5;     
     }
 
     // Update is called once per frame
@@ -79,14 +78,12 @@ public class EnemyMovement : MonoBehaviour
 
     public void stopMovement()
     {
-        if (uiManager.gameOverScreen.activeSelf == true || uiManager.youWinScreen.activeSelf == true)
-        {
+
             foreach (Behaviour component in components)
             {
                 component.enabled = false;
             }
             speed = 0;
-        }
-        
+    
     }
 }
