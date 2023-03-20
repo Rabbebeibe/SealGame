@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
     public float speed;
     public float damage;
     
@@ -14,10 +13,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Behaviour[] components;
     [SerializeField] private Health playerHealth;
 
-    private void Awake()
-    {
-
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +32,10 @@ public class EnemyMovement : MonoBehaviour
             enemyRb.velocity = new Vector2(-speed, 0f);
         }
 
+        //Stop enemy movement when game over screen or win screen is active
         if (uiManager.gameOverScreen.activeSelf == true || uiManager.youWinScreen.activeSelf == true)
         {
             stopMovement();
-
-            if (IsFacingRight())
-            {
-                enemyRb.velocity = new Vector2(speed, 0f);
-            }
-            else
-            {
-                enemyRb.velocity = new Vector2(-speed, 0f);
-            }
-
         }
         
     }
@@ -61,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        //Flip enemy sprite
         if(other.tag == "Ground")
         {
             transform.localScale = new Vector2(-(Mathf.Sign(enemyRb.velocity.x)), transform.localScale.y);
@@ -68,6 +55,7 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
+    //Check collision between player and enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -78,8 +66,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void stopMovement()
     {
-
-            foreach (Behaviour component in components)
+        //Disable selected components    
+        foreach (Behaviour component in components)
             {
                 component.enabled = false;
             }

@@ -6,7 +6,7 @@ public class HealthCollectible : MonoBehaviour
 {
     [SerializeField]private float healthValue;
 
-
+    //Check collision between player and health collectible
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

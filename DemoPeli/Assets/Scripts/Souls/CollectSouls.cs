@@ -18,11 +18,7 @@ public class CollectSouls : MonoBehaviour
         uiManager = FindObjectOfType<UIManager>();
     }
 
-    private void Update()
-    {
-
-    }
-
+    //Collect souls by touching them and also add it to UI
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Soul"))
@@ -32,6 +28,7 @@ public class CollectSouls : MonoBehaviour
 
             numberOfSouls.text = souls.ToString();
 
+            //Check if player have collected every souls and enable win screen
             if(souls == 18)
             {
                 foreach (Behaviour component in components)

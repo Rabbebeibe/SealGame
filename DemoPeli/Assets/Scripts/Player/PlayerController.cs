@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("horizontal", Mathf.Abs(Input.GetAxis("Horizontal")));
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
+        //Player jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
+        //Player jumps higher when space is pressed longer
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {
             if(jumpTimeCounter > 0)
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Player movement
         transform.Translate(Vector2.right * speed * hInput * Time.deltaTime);
 
         if(hInput > 0 && facingRight)
@@ -78,6 +81,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Stops jumping animation when player collides with ground
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -86,6 +90,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Flip player
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;

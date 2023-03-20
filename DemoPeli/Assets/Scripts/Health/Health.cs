@@ -27,11 +27,13 @@ public class Health : MonoBehaviour
 
     }
 
+    //Add health to player
     public void AddHealth(float value)
     {
         currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
     }
 
+    //Restart game full health and enable components again
     public void Respawn()
     {
         dead = false;
@@ -44,14 +46,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(1);
-        }
-    }
-
+    //Enable game over screen when player dies, Disable selected components from player
     public void GameOverScreen()
     {
         if (!dead)

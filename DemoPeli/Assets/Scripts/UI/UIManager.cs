@@ -14,21 +14,25 @@ public class UIManager : MonoBehaviour
         youWinScreen.SetActive(false);
     }
 
+    //Set win screen active
     public void YouWin()
     {
         youWinScreen.SetActive(true);
     }
 
+    //Set game over screen active
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
     }
 
+    //Load scene again
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    //Close game (works only in builded version)
     public void Quit()
     {
         Application.Quit();
